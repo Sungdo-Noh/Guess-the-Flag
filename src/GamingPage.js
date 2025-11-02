@@ -1,15 +1,31 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { QuizData } from './QuizData';
 
-function GamingPage(props) {
-    const navigate = useNavigate();
-    const gotoEndingPage =()=>{
-        navigate('/ending');
-    }
+function GamingPage() {
+    const [num, setNum]= useState(0); //문제id, 0번째부터 시작
+    const [ans, setAns] = useState('');
     
+    const handleAnswer =(e)=>{
+        setAns(e.target.value);
+    }
+    const handleSubmit =()=>{
+        if(ans==""){
+            alert("값을 입력하시오");
+        }
+        if(ans==QuizData[1].a){
+            console.log("correct");
+            setAns('');
+        }else{
+            console.log("no");
+            setAns('');
+        }
+        
+    }
     return (
         <div>
-            <button onClick={gotoEndingPage}>Finish</button>
+            <h3>{QuizData[1].q}</h3>
+            <input value={ans} onChange={handleAnswer}/>
+            <button onClick={handleSubmit}>제출</button>
         </div>
     );
 }

@@ -18,6 +18,7 @@ function GamingPage() {
         }else{
             console.log("no");
             setAns('');
+            console.log("hh");
         }
         
     }

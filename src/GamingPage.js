@@ -17,6 +17,7 @@ function GamingPage() {
     const copySliced = copy.slice(0,1);
     setNewArr(copySliced);
     console.log(newArr);
+    console.log(copy);
   }, []);
 
   const handleAnswer = e => {

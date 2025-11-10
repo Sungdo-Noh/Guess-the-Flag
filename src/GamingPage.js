@@ -16,8 +16,7 @@ function GamingPage() {
     }
     const copySliced = copy.slice(0,1);
     setNewArr(copySliced);
-    console.log(newArr);
-    console.log(copy);
+    console.log(copySliced[0].q);
   }, []);
 
   const handleAnswer = e => {
@@ -39,7 +38,7 @@ function GamingPage() {
   };
   return (
     <div>
-      <h3>{QuizData[num].q}</h3>
+      <h3>{newArr[0]?.q}</h3>
       <input placeholder="answer" ref={deleteInput} onChange={handleAnswer} />
       <button onClick={handleSubmit}>제출</button>
       

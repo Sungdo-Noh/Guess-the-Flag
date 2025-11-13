@@ -66,7 +66,7 @@ function GamingPage() {
             />
           <p>{num}</p>
           <input placeholder="answer" ref={deleteInput} onChange={handleAnswer} />
-          <button onClick={handleSubmit}> submit </button>
+          <button onClick={handleSubmit}> submit{num} </button>
         </div>
       )}
     </div>
